@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="th">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dynamic QR Generator</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/App.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Creator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script type="module" src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>QR Creator</h1>
+
+    <label>ลิงก์หรือข้อความ:</label>
+    <input id="inputText" type="text" placeholder="เช่น https://example.com" />
+
+    <label>สี QR:</label>
+    <input id="colorPicker" type="color" value="#000000" />
+
+    <label>อัปโหลดโลโก้ (เลือกได้):</label>
+    <input id="logoInput" type="file" accept="image/*" />
+
+    <button id="generateBtn">สร้าง QR Code</button>
+
+    <canvas id="qrCanvas"></canvas>
+    <div class="actions">
+      <button id="saveBtn">ดาวน์โหลด QR</button>
+      <button id="saveDynamicBtn">บันทึกเป็น Dynamic QR</button>
+    </div>
+
+    <p id="dynamicLink"></p>
+  </div>
+</body>
 </html>
